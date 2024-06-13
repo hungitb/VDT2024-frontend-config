@@ -1,6 +1,6 @@
 frontend:
   replicaCount: 2
-  image: hungitb/fe:v45
+  image: hungitb/fe:v2
   service:
     name: frontend-service
     selectorLabels: |-
