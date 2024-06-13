@@ -1,0 +1,22 @@
+frontend:
+  replicaCount: 2
+  image: hungitb/fe:v45
+  service:
+    name: frontend-service
+    selectorLabels: |-
+      app: vdt-students-manager
+      role: frontend
+    nodePort: 31003
+
+backend:
+  host: 116.103.226.146
+  port: 8404
+
+nginxPrometheusExporter:
+  replicaCount: 2
+  image: nginx/nginx-prometheus-exporter:1.1.0
+  service:
+    name: frontend-prometheus-exporter-service
+    selectorLabels: |-
+      app: vdt-students-manager
+      role: frontend-prometheus-exporter
